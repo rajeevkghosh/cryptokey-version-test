@@ -11,9 +11,10 @@ data "google_kms_key_ring" "keyring-1" {
 
 resource "google_kms_crypto_key" "cryptokey-25" {
   name     = "cryptokey-25"
+  purpose  = "ASYMMETRIC_SIGN"
   key_ring = data.google_kms_key_ring.keyring-1.id
   version_template {
-    algorithm = "RSA_SIGN_PKCS1_3072_SHA256"
+    algorithm = "RSA_PKCS1_3072_SHA256"
   }
 
   lifecycle {
