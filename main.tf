@@ -13,7 +13,7 @@ resource "google_kms_crypto_key" "cryptokey-25" {
   name     = "cryptokey-25"
   key_ring = data.google_kms_key_ring.keyring-1.id
   version_template {
-    algorithm = "RSA_PSS_2048_SHA256"
+    algorithm = "RSA_SIGN_PSS_2048_SHA256"
   }
 
   lifecycle {
